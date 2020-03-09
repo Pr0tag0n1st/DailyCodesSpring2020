@@ -4,22 +4,22 @@
 
 int main() {
 	al_init(); //sets up allegro
-	al_init_primitives_addon(); //sets up shapes library
+	al_init_image_addon(); //sets up shapes library
 
-	ALLEGRO_DISPLAY* display = al_create_display(500, 500); //makes game screen
-	int xpos, xpos2, xpos3; //x-coordinates
-	int ypos, ypos2, ypos3; //y-coordinates
-	int bxpos, bxpos2, bxpos3;
-	int bypos, bypos2, bypos3;
-	double alpha = 1; //angle
+	al_create_display(500, 500); //makes game screen
+	int xpos; xpos2; xpos3; //x-coordinates
+	int ypos; ypos2; ypos3; //y-coordinates
+	int bxpos; bxpos2; bxpos3;
+	int bypos; bypos2; bypos3;
+	int alpha = 1; //angle 
 
 	while (1) { //game loop******************************************************
 
 		//physics section/////////////////////////////////////
 		alpha += .001;//increase angle
 
-		xpos = 100 * sin(alpha) + 250;
-		ypos = 100 * cos(alpha) + 250;
+		xpos = 20 * sin(alpha) + 350;
+		ypos = 300 * cos(alpha) + 150;
 
 		xpos2 = 100 * sin(alpha + (2 * 3.14 / 3)) + 250;
 		ypos2 = 100 * cos(alpha + (2 * 3.14 / 3)) + 250;
@@ -45,9 +45,85 @@ int main() {
 		//al_draw_filled_circle(bxpos, bypos, 5, al_map_rgb(0, 0, 0));
 		//al_draw_filled_circle(bxpos2, bypos2, 5, al_map_rgb(0, 0, 0));
 		//al_draw_filled_circle(bxpos3, bypos3, 5, al_map_rgb(0, 0, 0));
-		al_flip_display();
+		al_flip_display;
 	}//end game loop***********************************************************
-
-
-	al_destroy_display(display); //clear up memory
+	al_destroy_display(); //clear up memory
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Changed primitives in Allegro menu (runtime)
+//Changed xpos in timer section(runtime)
+//Changed ypos in timer section(runtime)
+//Changed , in declarations to ;(compiletime)
+//Changed double for alpha to int(runtime)
+//Removed () in al_flip_display();(compiletime)
+//Completely uninstalled Allegro(compiletime)
+//Initialized image instead of primitives(runtime)
+//No allegro display variable(compiletime)
+//Removed parameter from al_destroy_display();(compiletime)
